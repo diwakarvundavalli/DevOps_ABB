@@ -1,1 +1,17 @@
+-----Terraform script to provision an AKS cluster-----
 
+Step 1: Install Requirements
+Terraform
+Azure CLI
+Step 2: Save the Terraform Script
+Step 3: Initialize Terraform
+CMD: terraform init
+Step 4: Preview the Deployment Plan
+CMD: terraform plan
+Step 5: Apply the Plan (Deploy Resources)
+CMD: terraform apply
+Step 6: Verify AKS Cluster & Azure Monitor
+CMD: az aks show --name (CLUSTER NAME) --resource-group (RESOURCE NAME) --query "provisioningState"
+Step 7: Access the Cluster
+CMD: az aks get-credentials --resource-group (GROUP NAME) --name (CLUSTER NAME)
+     kubectl get nodes
