@@ -1,1 +1,18 @@
+Create a Dockerfile for a sample application, build the image, and push it to Azure Container Registry (ACR).
 
+STEP 1: Create the Sample App and Dockerfile
+STEP 2: Build the Docker Image
+STEP 3: Login to Azure & Push to ACR
+       i. Login to Azure
+          az login
+      ii. Create Azure Container Registry
+          az acr create --name (NAME) \
+                        --resource-group (YOUR RESOURCE) \
+                        --admin-enabled true
+      iii.Get ACR Login Server
+          az acr show --name (REGISTRY NAME) --query loginServer --output tsv
+      iv.Tag and Push Image to ACR
+          docker tag (APPLICATION NAME):latest  (REGISTRY NAME).azurecr.io/(APPLICATION NAME):latest
+          docker push (REGISTRY NAME).azurecr.io/(APPLICATION NAME):latest | tee acr-push-logs.txt
+STEP 4:Image in ACR
+      az acr repository list --name  ( REGISTRY NAME ) --output table
