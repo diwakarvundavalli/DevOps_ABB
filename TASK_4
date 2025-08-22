@@ -1,1 +1,10 @@
+Multi-Stage Pipeline with Env-Specific Parameter Files
 
+Step 1: Prepare Your Repo
+Step 2: Create Azure DevOps Environments
+Step 3: Configure Approvals on Test and Prod
+Step 4: Create Azure Service Connection
+Step 5: Create the Pipeline YAML File
+Step 6: Commit and Push the Pipeline YAML
+Step 7: Run the Pipeline
+Step 8: Monitor and Verify
