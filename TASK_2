@@ -1,1 +1,36 @@
+To set up a CI pipeline in Azure DevOps
 
+1. Create a New Pipeline
+2. Create the azure-pipelines.yml File
+3. Commit and Push
+
+
+Azure_pipeline.yml
+""
+trigger:
+- main  # Trigger push to main branch
+
+pool:
+  vmImage: 'ubuntu-latest'  # Use latest Ubuntu build agent
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.0'  # Specify Node.js version
+  displayName: 'Install Node.js'
+
+- script: npm install
+  displayName: 'Install dependencies'  
+
+- script: npm test
+  displayName: 'Run unit tests'
+
+- script: npm run build
+  displayName: 'Build application'
+
+- task: PublishBuildArtifacts
+  inputs:
+    PathtoPublish: 'dist'        # Directory to publish (adjust if needed)
+    ArtifactName: 'drop'         # Artifact name
+    publishLocation: 'Container' # Store artifact in Azure DevOps
+                                                                          ""
