@@ -1,1 +1,10 @@
+Deploy your containerized Flask app to Azure Kubernetes Service (AKS)
 
+Step 1: Create deployment.yaml
+Step 2: Create service.yaml
+Step 3: Apply YAMLs to AKS
+CMD: az aks get-credentials --resource-group (Resource Group Name) --name (Cluster Name)
+Step 4: Check Pod Status
+CMD: kubectl get pods
+Step 5: Describe a Pod
+CMD: kubectl describe pod <pod-name> > describe-output.txt
