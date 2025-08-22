@@ -1,1 +1,9 @@
+To set up a CD pipeline in Azure DevOps for deploying your Node.js app to Azure App Service.
 
+step 1: Create Azure DevOps Environments
+Step 2: Configure Approval Gates for Production Environment
+Step 3: Set Up Service Connection in Azure DevOps
+Step 4: Create the CD Pipeline YAML File
+Step 5: Create a Release Pipeline
+Step 6: Run the Pipeline
+Step 7: Monitor Deployment and View Logs
