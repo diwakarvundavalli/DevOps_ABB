@@ -1,1 +1,17 @@
+Kubernetes deployment into a Helm chart
 
+Step 1: Create Helm Chart Directory
+CMD:  helm create (Application Name)
+      cd (Application Name)
+Step 2: Customize the Helm Chart
+Step 3: Package the Helm Chart
+CMD: helm package (Application Name)
+     (Application Name)-0.1.0.tgz
+     mv(Application Name)-0.1.0.tgz helm-chart.tgz
+Step 4: Deploy to AKS with Helm
+CMD: az aks get-credentials --resource-group (Resource Group) --name (Cluster Name)
+     helm install sample-app-release helm-chart.tgz --values  (Application Name)/values.yaml | tee helm-deploy-logs.txt
+Step 5: Validate the Deployment
+CMD: kubectl get pods -l app=(Application Name)-release
+     kubectl get svc
+     curl http://<EXTERNAL-IP>
