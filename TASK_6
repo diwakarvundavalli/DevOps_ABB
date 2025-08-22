@@ -1,1 +1,12 @@
+------Azure Key Vault in a CI/CD pipeline------
 
+Step 1: Prerequisites
+Key Vault -
+Key Vault Reader
+Key Vault Secrets User
+Step 2: Configure Federated Identity in Azure
+Step 3: Update cd-pipeline.yml
+Step 4: Verify Deployment Logs
+IN PIPELINE  Actions > Workflow > Job Logs
+Step 5: Confirm in Kubernetes
+CMD: kubectl get secrets app-secrets -o yaml
