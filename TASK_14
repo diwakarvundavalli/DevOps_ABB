@@ -1,1 +1,11 @@
+Debugging a failing Azure DevOps pipeline
+
+Step 1: Locate the Failing Step
+        Pipelines > Select your run
+        error like ( Variable not found
+                   Undefined variable
+                   Authentication failed due to missing token )
+Step 2: Echo Variables for Debugging
+Step 3: Debug Secrets Handling
+       Pipeline > Variables > Mark as secret
 
