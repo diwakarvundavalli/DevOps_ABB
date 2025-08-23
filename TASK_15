@@ -1,0 +1,18 @@
+AKS issue where pods cannot communicate with external services
+
+Step 1: Confirm the Issue Scope
+Step 2: Check DNS Resolution Inside Pods
+Step 3: Check AKS Network Configuration
+
+
+network-issue-resolved.md
+CMD : kubectl exec -it <pod-name> -- curl https://google.com
+Checked DNS Resolution
+CMD : kubectl exec -it <pod-name> -- nslookup google.com
+Inspected CoreDNS Status
+CMD : kubectl get pods -n <pod-name>-l <app-name>=kube-dns
+      kubectl logs -n <pod-name> -l <app-name>=kube-dns
+Checked Network Policies
+CMD : kubectl get networkpolicy --all-namespaces
+Reviewed Node Logs
+CMD : kubectl logs -n <pod-name> -l <app-name>=kube-proxy
