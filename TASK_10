@@ -1,1 +1,14 @@
+Azure Monitor for an AKS-based application
 
+Step 1: Enable Azure Monitor for Containers
+CMD : az aks enable-addons \
+       --resource-group <RESOURCE_GROUP> \
+       --name <AKS_CLUSTER_NAME> \
+       --addons monitoring \
+       --workspace-resource-id <LOG_ANALYTICS_WORKSPACE_RESOURCE_ID>
+Step 2: Configure Metrics Collection
+Azure Monitor will automatically collect metrics like CPU, memory, node availability, and container restarts when enabled.
+Step 3: Create Alerts for CPU & Memory
+Create alerts based on metrics using the Azure Portal or CLI
+Step 4: Test the Alerts
+CPU/memory load in a pod using stress tools
