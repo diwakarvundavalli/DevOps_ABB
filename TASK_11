@@ -1,1 +1,10 @@
+Kusto Query Language(KQL) query in Azure Log Analytics
 
+STEP 1: Save the Query to a .kql File
+STEP 2: Open Azure Portal and Navigate to Log Analytics
+        Log Analytics workspaces -->  Logs in the workspace menu
+STEP 3: Run the KQL Query
+STEP 4: Export the Results
+       Export as JSON
+       After running the query, click the "Export" button (top right of results pane).
+       Select "Export to JSON".
