@@ -1,1 +1,17 @@
+Integrating a security scanner like SonarQube or Dependabot into a CI/CD pipeline
 
+SonarQube → static code analysis
+OWASP Dependency-Check → open-source dependency
+GitHub Dependabot
+
+1. SonarQube Scan Logs
+   Logs printed to GitHub Actions console.
+   Vulnerabilities and issues will be visible in:
+   GitHub logs.
+   SonarQube dashboard: https://<your-sonarqube-url>/dashboard?id=myproject
+
+2.OWASP Dependency-Check Output
+   /dependency-check-report:
+    dependency-check-report.html
+    dependency-check-report.json
+    dependency-check-report.xml
