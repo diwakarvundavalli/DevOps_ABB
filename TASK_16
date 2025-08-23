@@ -1,0 +1,30 @@
+To identify cost-saving opportunities using Azure Advisor
+
+Step 1: Access Azure Advisor
+        Azure Advisor dashboard.
+Step 2: Analyze Recommendations for Your Resources
+        shut down underutilized virtual machines
+        Optimize or remove idle public IP addresses, unattached disks, or unused resources.
+        Switch to cheaper SKU or tier for services like App Service Plans or Databases
+Step 3: Example Cost-Saving Proposal
+        App Service Plans are underutilized, consider scaling to a lower pricing tier.
+        Optimization: Switch from Premium to Standard or Basic tiers based on performance needs.
+                      Delete disks no longer attached to VMs and disassociate unused public IPs.
+                      Resize the VM to a smaller SKU or deallocate it if not in use.
+Step 4: Implement and Monitor
+         Monitor impact with Azure Cost Management + Billing dashboards.
+         Use Azure Automation or Logic Apps for automated cleanup of idle resources.
+         Set budget alerts to prevent unexpected costs.
+
+cost-optimization.md
+
+- [Azure Advisor Documentation](https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations)
+- [Azure Cost Management](https://docs.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview)
+- [Azure Reserved Instances](https://docs.microsoft.com/en-us/azure/cost-management-billing/reserve-resources)
+
+
+Like using SKUs based on workload
+
+| Current SKU      | Proposed SKU      | Estimated Savings |
+|------------------|-------------------|-------------------|
+| Standard_D4s_v3  | Standard_D2s_v3   | 30-50% reduction  |
