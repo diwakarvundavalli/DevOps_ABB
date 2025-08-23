@@ -1,1 +1,12 @@
+Microsoft Defender for Cloud
 
+Step 1: Scan Container and Generate Report
+CMD : trivy image myimage:latest > container-scan-report.txt
+      Docker installed
+      Trivy installed: https://aquasecurity.github.io/trivy
+      trivy image myimage:latest
+Step 2: Scan with Snyk
+CMD : npm install -g snyk
+       snyk auth
+       snyk container test myimage:latest
+Step 3: Parse Vulnerabilities and Create Markdown
