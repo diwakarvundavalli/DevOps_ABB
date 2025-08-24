@@ -1,0 +1,37 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+  - job: SecurityScan
+    displayName: "Run OWASP Dependency-Check"
+    steps:
+      - task: UseDotNet@2
+        inputs:
+          packageType: 'sdk'
+          version: '7.x'
+
+      - script: |
+          echo "Installing OWASP Dependency-Check CLI..."
+          wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.4.0/dependency-check-8.4.0-release.zip
+          unzip dependency-check-8.4.0-release.zip -d dependency-check
+        displayName: 'Install Dependency-Check'
+
+      - script: |
+          echo "Running security scan..."
+          ./dependency-check/dependency-check/bin/dependency-check.sh \
+            --project "MyApp" \
+            --scan . \
+            --format "HTML" \
+            --out "security-report"
+        displayName: 'Run Dependency Scan'
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: 'security-report'
+          ArtifactName: 'SecurityScanReport'
+          publishLocation: 'Container'
